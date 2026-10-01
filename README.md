@@ -23,6 +23,11 @@ serving on AMD Strix Halo APUs.
 podman build --build-arg STRIX_TAG=b1005 -t strix-rocm-llama-cpp:b1005 .
 ```
 
+A daily GitHub workflow builds and pushes
+`ghcr.io/birdrock00/strix-rocm-llama-cpp:latest` (plus a per-release tag)
+automatically from the latest upstream release, so Kubernetes deployments
+can simply reference `:latest`.
+
 ## Run
 
 The image expects GGUF model file(s) mounted at `/models` and the Strix Halo
